@@ -4,10 +4,11 @@
   "description": "A project from the course curso.dev to learn more about programming!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "lint:check": "prettier --check .",
-    "lint:fix": "prettier -w ."
+    "lint:fix": "prettier -w .",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
