@@ -1,4 +1,4 @@
-const { calcSum } = require("../models/calculator");
+const { calcSum } = require("../../models/calculator");
 
 it.each([
   [2, 3, 5],
