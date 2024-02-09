@@ -10,5 +10,8 @@ it.each([
 });
 
 it('should throw error when calculator is called with wrong params', () => {
-  expect(() => calcSum(10, 'banana')).toThrow(Error);
+  const res = calcSum(10, 'banana');
+
+  expect(res.status).toBe('Error');
+  expect(res.message).toEqual('Not possible to run sum with given parameters');
 });
