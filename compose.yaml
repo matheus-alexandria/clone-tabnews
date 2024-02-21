@@ -3,3 +3,5 @@ services:
     image: 'postgres:16.0-alpine3.18'
     environment:
       - POSTGRES_PASSWORD=admin123
+    ports:
+      - 5430:5432
