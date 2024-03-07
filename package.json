@@ -4,10 +4,11 @@
   "description": "A project from the course curso.dev to learn more about programming!",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier -w .",
     "services:up": "sudo docker compose -f infra/compose.yaml up -d",
+    "services:stop": "sudo docker compose -f infra/compose.yaml stop",
     "services:down": "sudo docker compose -f infra/compose.yaml down",
     "change:version": "source ~/.nvm/nvm.sh && nvm use",
     "test": "jest",
