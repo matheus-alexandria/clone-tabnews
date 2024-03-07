@@ -7,6 +7,9 @@
     "dev": "next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier -w .",
+    "services:up": "sudo docker compose -f infra/compose.yaml up -d",
+    "services:down": "sudo docker compose -f infra/compose.yaml down",
+    "change:version": "source ~/.nvm/nvm.sh && nvm use",
     "test": "jest",
     "test:watch": "jest --watch",
     "database": "docker compose -f infra/compose.yaml up -d"
@@ -22,7 +25,6 @@
   },
   "homepage": "https://github.com/matheus-alexandria/clone-tabnews#readme",
   "dependencies": {
-    "dotenv": "16.4.5",
     "next": "^13.1.6",
     "node-pg-migrate": "6.2.2",
     "pg": "8.11.3",
