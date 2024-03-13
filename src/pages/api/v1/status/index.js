@@ -20,10 +20,12 @@ export default async function status(request, response) {
   const updatedAt = new Date().toISOString();
   response.status(200).json({
     updated_at: updatedAt,
-    database: {
-      version: version.rows[0].version,
-      max_connections: Number(maxConnections.rows[0].max_connections),
-      opened_connections: connections.rows.length
+    dependencies: {
+      database: {
+        version: version.rows[0].version,
+        max_connections: Number(maxConnections.rows[0].max_connections),
+        opened_connections: connections.rows.length
+      }
     }
   });
 }
