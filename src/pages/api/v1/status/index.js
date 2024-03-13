@@ -15,7 +15,13 @@ export default async function status(request, response) {
       WHERE name = 'max_connections'
     `
   );
-  const connections = await database.query("SELECT pid FROM pg_stat_activity");
+  const connections = await database.query(
+    `
+      SELECT datid
+      FROM pg_stat_activity
+      WHERE state = 'active'
+    `
+  );
 
   const updatedAt = new Date().toISOString();
   response.status(200).json({
