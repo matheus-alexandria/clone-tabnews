@@ -5,22 +5,23 @@ export default async function status(request, response) {
     `
       SELECT setting AS version
       FROM pg_settings
-      WHERE name = 'server_version'
+      WHERE name = 'server_version';
     `
   );
   const maxConnections = await database.query(
     `
       SELECT setting AS max_connections
       FROM pg_settings
-      WHERE name = 'max_connections'
+      WHERE name = 'max_connections';
     `
   );
   const connections = await database.query(
     `
-      SELECT datid
+      SELECT *
       FROM pg_stat_activity
-      WHERE state = 'active'
-    `
+      WHERE datname = $1;
+    `,
+    [process.env.POSTGRES_DB]
   );
 
   const updatedAt = new Date().toISOString();
