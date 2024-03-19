@@ -17,7 +17,7 @@ export default async function status(request, response) {
   );
   const connections = await database.query(
     `
-      SELECT *
+      SELECT datname
       FROM pg_stat_activity
       WHERE datname = $1;
     `,
