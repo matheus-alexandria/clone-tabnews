@@ -13,7 +13,7 @@
     "change:version": "source ~/.nvm/nvm.sh && nvm use",
     "test": "jest",
     "test:watch": "jest --watch",
-    "database": "docker compose -f infra/compose.yaml up -d"
+    "migration:create": "node-pg-migrate create"
   },
   "repository": {
     "type": "git",
