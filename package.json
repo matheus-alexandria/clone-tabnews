@@ -13,7 +13,9 @@
     "change:version": "source ~/.nvm/nvm.sh && nvm use",
     "test": "jest",
     "test:watch": "jest --watch",
-    "migration:create": "node-pg-migrate create"
+    "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
+    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up",
+    "migration:down": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development down"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   },
   "homepage": "https://github.com/matheus-alexandria/clone-tabnews#readme",
   "dependencies": {
+    "dotenv": "16.4.4",
     "next": "^13.1.6",
     "node-pg-migrate": "6.2.2",
     "pg": "8.11.3",
