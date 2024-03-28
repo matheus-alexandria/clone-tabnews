@@ -22,7 +22,7 @@ async function runMigrations(dryRun) {
     databaseUrl: process.env.DATABASE_URL,
     dir: join('infra', 'migrations'),
     direction: 'up',
-    dryRun: false,
+    dryRun: dryRun,
     migrationsTable: 'pgmigrations',
     verbose: true
   });
