@@ -11,8 +11,8 @@
     "services:stop": "sudo docker compose -f infra/compose.yaml stop",
     "services:down": "sudo docker compose -f infra/compose.yaml down",
     "change:version": "source ~/.nvm/nvm.sh && nvm use",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watchAll --runInBand",
     "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
     "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up",
     "migration:down": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development down"
