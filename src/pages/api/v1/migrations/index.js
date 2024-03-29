@@ -5,13 +5,13 @@ export default async function migrations(request, response) {
   if (request.method === 'GET') {
     const migrations = await runMigrations(true);
 
-    response.status(200).json(migrations);
+    return response.status(200).json(migrations);
   }
 
   if (request.method === 'POST') {
     const migrations = await runMigrations(false);
 
-    response.status(200).json(migrations);
+    return response.status(200).json(migrations);
   }
 
   response.status(405).json();
